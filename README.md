@@ -1,4 +1,4 @@
-# El Campeon Academy — sajt
+# El Campéon Academy, sajt
 
 Statičan sajt (HTML + CSS + JS), bez build koraka. Spreman za GitHub Pages.
 
@@ -13,13 +13,16 @@ assets/img/             OVDE idu fotografije
 ```
 
 ## Fotografije
-Ubacite slike u `assets/img/` sa tačno ovim imenima (jpg). Dok slika ne postoji, prikazuje se plavi placeholder.
+Ubacite slike u `assets/img/` sa tačno ovim imenima. Dok slika ne postoji, prikazuje se plavi placeholder.
 
 - hero.jpg (glavna, horizontalna)
-- o-akademiji.jpg
+- o-nama.jpg (Kako je sve počelo)
+- probni-trening.jpg (Hajde, zajedno da probamo)
+- ocekivanja.jpg (Očekivanja na treningu)
+- trener.jpg (uspravna 4:5)
 - program-1.jpg, program-2.jpg, program-3.jpg (uspravne 4:5)
-- trener-1.jpg, trener-2.jpg, trener-3.jpg (uspravne 4:5)
 - galerija-1.jpg … galerija-5.jpg (galerija-1 je najveća)
+- klub-1.png … klub-4.png (logotipi klubova partnera)
 
 Preporuka: širina do 1600px, kompresovano (npr. squoosh.app).
 
