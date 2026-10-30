@@ -36,7 +36,7 @@
 <header class="site-header">
   <nav class="nav" aria-label="Glavna navigacija">
     <a href="#top" class="brand" aria-label="El Campéon Academy, početak">
-      <img src="assets/logo-crest.png" alt="" width="38" height="44">
+      <img src="assets/logo-crest.png" alt="" width="48" height="56">
       <span class="brand__text">El Campéon<small>Academy</small></span>
     </a>
     <div class="nav__links">
@@ -73,20 +73,21 @@
 
 <main id="top">
   <section class="hero" aria-label="Uvod">
-    <div class="hero__frame">
-      <div class="media hero__media"><div class="media__ph"><span>Dule, moraš mi poslati slike za ova polja</span></div><img data-src="assets/img/hero.jpg" alt="Trening fudbalske akademije El Campéon" fetchpriority="high"></div>
-      <div class="hero__shade"></div>
-      <div class="hero__content">
-        <div class="hero__copy">
-          <img class="hero__crest hero-in d0" src="assets/logo-crest.png" alt="Grb fudbalske akademije El Campéon" width="120" height="140">
-          <p class="hero__eyebrow hero-in d1">Fudbalska akademija · <em>Uzrast od 6 do 15 godina</em></p>
-          <h1 class="hero-in d2">EL CAMPÉON</h1>
-          <p class="hero__slogan hero-in d3">Mesto gde podrška stvara šampione</p>
-          <div class="hero__actions hero-in d4">
-            <a class="btn btn--primary" href="#prijava">Zakaži probni trening</a>
-            <a class="btn btn--soft" href="#o-nama">Upoznaj akademiju</a>
-          </div>
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <h1 class="hero-in d2">EL CAMPÉON</h1>
+        <p class="hero__slogan hero-in d3">Mesto gde podrška stvara šampione</p>
+        <div class="hero__actions hero-in d4">
+          <a class="btn btn--primary" href="#prijava">Zakaži probni trening</a>
+          <a class="btn btn--soft" href="#o-nama">Upoznaj akademiju</a>
         </div>
+      </div>
+      <div class="hero__visual hero-in d2">
+        <div class="hero__frame">
+          <div class="media hero__media"><div class="media__ph"><span>Dule, moraš mi poslati slike za ova polja</span></div><img data-src="assets/img/hero.jpg" alt="Trening fudbalske akademije El Campéon" fetchpriority="high"></div>
+        </div>
+        <div class="hero__badge float"><div><small><i aria-hidden="true"></i>Upis je otvoren</small><b>Tokom cele godine</b></div></div>
       </div>
     </div>
   </section>
@@ -97,7 +98,9 @@
       <div class="story__text" data-reveal>
         <p class="eyebrow">O nama</p>
         <h2 class="h2">Kako je sve počelo?</h2>
-        <p class="lead"><span class="todo">[UNETI: priča o osnivanju akademije, 2 do 3 rečenice. Kada je akademija pokrenuta, ko ju je pokrenuo i zašto.]</span></p>
+        <p class="lead">Akademija El Campéon nastala je iz prijateljstva, zajedničke ljubavi prema fudbalu i želje dvojice nekadašnjih saigrača da stvore nešto svoje. Spojili su ideje, znanje i iskustvo stečeno na terenu i pokrenuli priču koja deci pruža priliku da uče, napreduju i ostvaruju svoje snove.</p>
+        <p class="lead" style="margin-top:16px">Želeli su mesto gde rezultat nije jedino merilo uspeha, već gde se grade karakter, disciplina, samopouzdanje i timski duh. Tako je nastala akademija El Campéon, sa verom da se od malih koraka stvaraju veliki šampioni.</p>
+        <p class="story__date"><span aria-hidden="true"></span>Akademija otvorena 21. jula 2026.</p>
       </div>
     </div>
   </section>
@@ -105,13 +108,12 @@
   <section class="academy" id="akademija">
     <div class="wrap">
       <div class="academy__head" data-reveal>
-        <p class="eyebrow eyebrow--light">O akademiji</p>
         <h2 class="h2 h2--light">Fudbalska akademija osnovana u Novom Sadu</h2>
       </div>
       <div class="academy__grid">
         <div class="hl" data-reveal><div class="float" style="animation-delay:0s"><div class="pcard"><div class="pcard__glow" aria-hidden="true"></div><span class="pcard__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><div class="pcard__body"><p class="pcard__label">Uzrast dece</p><p class="pcard__big pcard__big--age">6 do 15<span>godina</span></p></div></div></div></div>
         <div class="hl" data-reveal><div class="float" style="animation-delay:-1.5s"><div class="pcard"><div class="pcard__glow" aria-hidden="true"></div><div class="pcard__top"><span class="pcard__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path><path d="m9 16 2 2 4-4"></path></svg></span><span class="pcard__badge"><span class="pcard__dot" aria-hidden="true"></span>Upis je otvoren</span></div><div class="pcard__body"><p class="pcard__label">Upis novih članova</p><p class="pcard__big pcard__big--year">Tokom cele godine</p></div></div></div></div>
-        <div class="rg" data-reveal><div class="float" style="animation-delay:-3s"><div class="pcard"><div class="pcard__glow" aria-hidden="true"></div><span class="pcard__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg></span><h3>UEFA licencirani treneri</h3></div></div></div>
+        <div class="rg" data-reveal><div class="float" style="animation-delay:-3s"><div class="pcard"><div class="pcard__glow" aria-hidden="true"></div><span class="pcard__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg></span><h3>UEFA B licencirani treneri</h3></div></div></div>
         <div class="rg" data-reveal><div class="float" style="animation-delay:-4.5s"><div class="pcard"><div class="pcard__glow" aria-hidden="true"></div><span class="pcard__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.5 8.5-5-5L2 17"></path><path d="M16 7h6v6"></path></svg></span><h3>Individualni i timski razvoj igrača</h3></div></div></div>
         <div class="rg" data-reveal><div class="float" style="animation-delay:-6s"><div class="pcard"><div class="pcard__glow" aria-hidden="true"></div><span class="pcard__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span><h3>Savremene metode treninga</h3></div></div></div>
       </div>
@@ -131,97 +133,13 @@
           </div>
         </div>
         <div class="coerver__stage">
-          <article class="cv-card" data-sr="Vladanje loptom"><span class="cv-card__tag">Coerver stub</span><div><h3>Ball mastery</h3><p>Vladanje loptom</p></div></article>
-          <article class="cv-card" data-sr="Prijem i dodavanje"><span class="cv-card__tag">Coerver stub</span><div><h3>Receiving &amp; passing</h3><p>Prijem i dodavanje</p></div></article>
-          <article class="cv-card" data-sr="Igra jedan na jedan"><span class="cv-card__tag">Coerver stub</span><div><h3>1v1 moves</h3><p>Igra jedan na jedan</p></div></article>
-          <article class="cv-card" data-sr="Brzina"><span class="cv-card__tag">Coerver stub</span><div><h3>Speed</h3><p>Brzina</p></div></article>
-          <article class="cv-card" data-sr="Završnica"><span class="cv-card__tag">Coerver stub</span><div><h3>Finishing</h3><p>Završnica</p></div></article>
-          <article class="cv-card" data-sr="Igra u grupi"><span class="cv-card__tag">Coerver stub</span><div><h3>Group play</h3><p>Igra u grupi</p></div></article>
+          <article class="cv-card" data-sr="Vladanje loptom"><img class="cv-card__mark" src="assets/logo-crest.png" alt="" aria-hidden="true"><div class="cv-card__top"><span class="cv-card__tag">Ball mastery</span><span class="cv-card__kind">Coerver stub</span></div><div class="cv-card__body"><h3>Vladanje loptom</h3><p>Sigurna kontrola lopte obema nogama, kroz svakodnevno ponavljanje.</p></div></article>
+          <article class="cv-card" data-sr="Prijem i dodavanje"><img class="cv-card__mark" src="assets/logo-crest.png" alt="" aria-hidden="true"><div class="cv-card__top"><span class="cv-card__tag">Receiving &amp; passing</span><span class="cv-card__kind">Coerver stub</span></div><div class="cv-card__body"><h3>Prijem i dodavanje</h3><p>Čist prvi dodir i precizno dodavanje, i kada je protivnik blizu.</p></div></article>
+          <article class="cv-card" data-sr="Igra jedan na jedan"><img class="cv-card__mark" src="assets/logo-crest.png" alt="" aria-hidden="true"><div class="cv-card__top"><span class="cv-card__tag">1v1 moves</span><span class="cv-card__kind">Coerver stub</span></div><div class="cv-card__body"><h3>Igra jedan na jedan</h3><p>Finte i promena pravca za prolaz pored protivnika.</p></div></article>
+          <article class="cv-card" data-sr="Brzina"><img class="cv-card__mark" src="assets/logo-crest.png" alt="" aria-hidden="true"><div class="cv-card__top"><span class="cv-card__tag">Speed</span><span class="cv-card__kind">Coerver stub</span></div><div class="cv-card__body"><h3>Brzina</h3><p>Brže odluke, brži start i rad sa loptom u punom tempu.</p></div></article>
+          <article class="cv-card" data-sr="Završnica"><img class="cv-card__mark" src="assets/logo-crest.png" alt="" aria-hidden="true"><div class="cv-card__top"><span class="cv-card__tag">Finishing</span><span class="cv-card__kind">Coerver stub</span></div><div class="cv-card__body"><h3>Završnica</h3><p>Mirnoća i pravilna tehnika udarca ispred gola.</p></div></article>
+          <article class="cv-card" data-sr="Igra u grupi"><img class="cv-card__mark" src="assets/logo-crest.png" alt="" aria-hidden="true"><div class="cv-card__top"><span class="cv-card__tag">Group play</span><span class="cv-card__kind">Coerver stub</span></div><div class="cv-card__body"><h3>Igra u grupi</h3><p>Kombinacije i saradnja sa saigračima u malim grupama.</p></div></article>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="trial" id="probni-trening">
-    <div class="wrap panel-split">
-      <div class="media media--r28" data-reveal="img"><div class="media__ph"><span>Dule, moraš mi poslati slike za ova polja</span></div><img data-src="assets/img/probni-trening.jpg" alt="Deca na probnom treningu" loading="lazy"></div>
-      <div data-reveal><div class="float" style="animation-delay:-1s"><div class="dpanel dpanel--center">
-          <h2 class="h2 h2--light">Hajde, zajedno da probamo!</h2>
-          <p class="lead"><span class="todo todo--light">[UNETI: kako se prijavljuje probni trening. Telefon, forma ili Instagram.]</span></p>
-          <a class="btn btn--primary" href="#prijava">Prijavi dete</a>
-        </div></div></div>
-    </div>
-  </section>
-
-  <section class="sched" id="treninzi">
-    <div class="wrap">
-      <div class="section-head">
-        <div data-reveal style="max-width:640px">
-          <p class="eyebrow">Raspored</p>
-          <h2 class="h2">Održavanje treninga</h2>
-        </div>
-        <div class="sched__loc" data-reveal><div class="float" style="animation-delay:-2s"><div class="lcard"><small>Lokacija i teren</small><span class="v"><span class="todo">[UNETI: lokacija/teren, adresa]</span></span></div></div></div>
-      </div>
-      <div class="sched__grid">
-        <div data-reveal><div class="float" style="animation-delay:-1.5s"><article class="lcard">
-          <h3>Grupa <span class="todo">[UNETI: uzrast]</span></h3>
-          <dl>
-            <div><dt>Dani</dt><dd><span class="todo">[UNETI: dani]</span></dd></div>
-            <div><dt>Termin</dt><dd><span class="todo">[UNETI: termin]</span></dd></div>
-            <div><dt>Trajanje</dt><dd><span class="todo">[UNETI: trajanje treninga]</span></dd></div>
-          </dl>
-        </article></div></div>
-        <div data-reveal><div class="float" style="animation-delay:-3s"><article class="lcard">
-          <h3>Grupa <span class="todo">[UNETI: uzrast]</span></h3>
-          <dl>
-            <div><dt>Dani</dt><dd><span class="todo">[UNETI: dani]</span></dd></div>
-            <div><dt>Termin</dt><dd><span class="todo">[UNETI: termin]</span></dd></div>
-            <div><dt>Trajanje</dt><dd><span class="todo">[UNETI: trajanje treninga]</span></dd></div>
-          </dl>
-        </article></div></div>
-        <div data-reveal><div class="float" style="animation-delay:-4.5s"><article class="lcard">
-          <h3>Grupa <span class="todo">[UNETI: uzrast]</span></h3>
-          <dl>
-            <div><dt>Dani</dt><dd><span class="todo">[UNETI: dani]</span></dd></div>
-            <div><dt>Termin</dt><dd><span class="todo">[UNETI: termin]</span></dd></div>
-            <div><dt>Trajanje</dt><dd><span class="todo">[UNETI: trajanje treninga]</span></dd></div>
-          </dl>
-        </article></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="programs" id="programi">
-    <div class="wrap">
-      <div class="section-head">
-        <div data-reveal style="max-width:640px">
-          <p class="eyebrow">Programi</p>
-          <h2 class="h2">Izaberi format treninga.</h2>
-        </div>
-        <p class="section-head__lead">Treninzi za decu od 6 do 15 godina. Niste sigurni šta odgovara? Javite nam se i zajedno ćemo izabrati pravi početak.</p>
-      </div>
-      <div class="programs__grid">
-        <article class="program" data-reveal>
-          <div class="media "><div class="media__ph"><span>Dule, moraš mi poslati slike za ova polja</span></div><img data-src="assets/img/program-1.jpg" alt="Program 01" loading="lazy"></div>
-          <h3>[PROGRAM 01]</h3>
-          <p><span class="todo">[UNETI: kratak opis programa]</span></p>
-          <div class="chips"><span class="chip">Uzrast [UNETI]</span><span class="chip">Trajanje [UNETI]</span><span class="chip">Termini [UNETI]</span></div>
-          <button type="button" class="btn btn--dark" data-program="[PROGRAM 01]">Pitaj za ovaj program</button>
-        </article>
-        <article class="program" data-reveal>
-          <div class="media "><div class="media__ph"><span>Dule, moraš mi poslati slike za ova polja</span></div><img data-src="assets/img/program-2.jpg" alt="Program 02" loading="lazy"></div>
-          <h3>[PROGRAM 02]</h3>
-          <p><span class="todo">[UNETI: kratak opis programa]</span></p>
-          <div class="chips"><span class="chip">Uzrast [UNETI]</span><span class="chip">Trajanje [UNETI]</span><span class="chip">Termini [UNETI]</span></div>
-          <button type="button" class="btn btn--dark" data-program="[PROGRAM 02]">Pitaj za ovaj program</button>
-        </article>
-        <article class="program" data-reveal>
-          <div class="media "><div class="media__ph"><span>Dule, moraš mi poslati slike za ova polja</span></div><img data-src="assets/img/program-3.jpg" alt="Program 03" loading="lazy"></div>
-          <h3>[PROGRAM 03]</h3>
-          <p><span class="todo">[UNETI: kratak opis programa]</span></p>
-          <div class="chips"><span class="chip">Uzrast [UNETI]</span><span class="chip">Trajanje [UNETI]</span><span class="chip">Termini [UNETI]</span></div>
-          <button type="button" class="btn btn--dark" data-program="[PROGRAM 03]">Pitaj za ovaj program</button>
-        </article>
       </div>
     </div>
   </section>
@@ -242,6 +160,48 @@
         <li data-reveal><div class="float" style="animation-delay:-2s;height:auto"><div class="step-card"><h3>Dogovaramo termin.</h3><p>Javljamo vam se, odgovaramo na pitanja i biramo trening koji odgovara igraču.</p></div></div></li>
         <li data-reveal><div class="float" style="animation-delay:-4s;height:auto"><div class="step-card"><h3>Dolazite na trening.</h3><p>Igrač dolazi u opremi za fudbal, a mi se pobrinemo za ostalo.</p></div></div></li>
       </ol>
+    </div>
+  </section>
+
+  <section class="sched" id="treninzi">
+    <div class="wrap">
+      <div class="section-head">
+        <div data-reveal style="max-width:640px">
+          <p class="eyebrow">Raspored</p>
+          <h2 class="h2">Održavanje treninga</h2>
+        </div>
+        <div class="sched__loc" data-reveal><div class="float" style="animation-delay:-2s"><div class="lcard"><small>Lokacija i teren</small><span class="v"><span class="todo">[UNETI: lokacija/teren, adresa]</span></span></div></div></div>
+      </div>
+      <div class="sched__grid">
+        <div data-reveal><div class="float" style="animation-delay:-1.5s"><article class="lcard">
+          <h3>Mlađi uzrast</h3>
+          <dl>
+            <div><dt>Dani</dt><dd>Ponedeljak do četvrtka</dd></div>
+            <div><dt>Termin</dt><dd>18:00 do 21:00</dd></div>
+            <div><dt>Uzrast</dt><dd><span class="todo">[UNETI: godišta]</span></dd></div>
+          </dl>
+        </article></div></div>
+        <div data-reveal><div class="float" style="animation-delay:-3s"><article class="lcard">
+          <h3>Stariji uzrast</h3>
+          <dl>
+            <div><dt>Dani</dt><dd>Ponedeljak do četvrtka</dd></div>
+            <div><dt>Termin</dt><dd>19:00 do 22:00</dd></div>
+            <div><dt>Uzrast</dt><dd><span class="todo">[UNETI: godišta]</span></dd></div>
+          </dl>
+        </article></div></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="trial" id="probni-trening">
+    <div class="wrap panel-split">
+      <div class="media media--r28" data-reveal="img"><div class="media__ph"><span>Dule, moraš mi poslati slike za ova polja</span></div><img data-src="assets/img/probni-trening.jpg" alt="Deca na probnom treningu" loading="lazy"></div>
+      <div data-reveal><div class="float" style="animation-delay:-1s"><div class="dpanel dpanel--center">
+          <h2 class="h2 h2--light">Hajde, zajedno da probamo!</h2>
+          <p class="lead"><span class="todo todo--light">[UNETI: kako se prijavljuje probni trening. Telefon, forma ili Instagram.]</span></p>
+          <a class="btn btn--primary" href="#prijava">Prijavi dete</a>
+        </div></div></div>
     </div>
   </section>
 
@@ -269,37 +229,26 @@
       <div class="coaches__head" data-reveal>
         <p class="eyebrow">Treneri</p>
         <h2 class="h2">Ljudi koji vode trening.</h2>
-        <p class="lead">Svi treneri akademije imaju UEFA licencu i rade po Coerver sistemu. Upoznajte tim pre prvog dolaska.</p>
+        <p class="lead">Treneri akademije imaju UEFA B licencu i rade po Coerver sistemu. Upoznajte tim pre prvog dolaska.</p>
       </div>
       <div class="coaches__info" data-reveal>
         <h3>[UNETI: ime trenera]</h3>
-        <p class="coaches__role">[UNETI: uloga] · UEFA licenca [UNETI: kategorija]</p>
+        <p class="coaches__role">[UNETI: uloga] · UEFA B licenca</p>
         <p class="coaches__bio"><span class="todo">[UNETI: kratka biografija trenera]</span></p>
       </div>
     </div>
   </section>
 
-  <section class="clubs" id="saradnja">
-    <div class="wrap">
-      <div class="clubs__head" data-reveal>
-        <p class="eyebrow">Partneri</p>
-        <h2 class="h2">Saradnja sa fudbalskim klubovima</h2>
-        <p class="lead"><span class="todo">[UNETI: sa kojim klubovima akademija sarađuje i šta saradnja znači za decu]</span></p>
-      </div>
-      <div class="clubs__grid">
-        <div class="media media--r20 media--logo" data-reveal><div class="media__ph"><span>[UNETI: logo kluba]</span></div><img data-src="assets/img/klub-1.png" alt="Logo kluba partnera" loading="lazy"></div>
-        <div class="media media--r20 media--logo" data-reveal><div class="media__ph"><span>[UNETI: logo kluba]</span></div><img data-src="assets/img/klub-2.png" alt="Logo kluba partnera" loading="lazy"></div>
-        <div class="media media--r20 media--logo" data-reveal><div class="media__ph"><span>[UNETI: logo kluba]</span></div><img data-src="assets/img/klub-3.png" alt="Logo kluba partnera" loading="lazy"></div>
-        <div class="media media--r20 media--logo" data-reveal><div class="media__ph"><span>[UNETI: logo kluba]</span></div><img data-src="assets/img/klub-4.png" alt="Logo kluba partnera" loading="lazy"></div>
-      </div>
-    </div>
-  </section>
 
   <section class="final">
-    <div class="wrap" data-reveal>
-      <h2><span class="w">Vidimo se</span> <span class="b">na treningu!</span></h2>
-      <img src="assets/logo-crest.png" alt="Grb fudbalske akademije El Campéon" width="96" height="112" loading="lazy">
-      <a class="btn btn--midnight" href="#prijava">Zakaži probni trening</a>
+    <div class="wrap final__wrap" data-reveal>
+      <div class="float" style="animation-delay:-2s;height:auto">
+        <div class="final__card">
+          <div class="float" style="animation-duration:5s;animation-delay:-1s;height:auto"><img src="assets/logo-crest.png" alt="Grb fudbalske akademije El Campéon" width="96" height="112" loading="lazy"></div>
+          <h2><span class="w">Vidimo se</span> <span class="b">na treningu!</span></h2>
+          <a class="btn btn--midnight" href="#prijava">Zakaži probni trening</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -308,7 +257,7 @@
       <div class="section-head">
         <div data-reveal>
           <p class="eyebrow eyebrow--light">Sa treninga</p>
-          <h2 class="h2 h2--light">Ovako izgleda naš teren.</h2>
+          <h2 class="h2 h2--light">Ovako to izgleda kod nas.</h2>
         </div>
         <a class="icon-btn " href="https://www.instagram.com/elcampeon.academy/" target="_blank" rel="noopener" aria-label="Instagram @elcampeon.academy" title="@elcampeon.academy"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.6" cy="6.4" r="1" fill="currentColor" stroke="none"></circle></svg></a>
       </div>
@@ -355,15 +304,6 @@
             <div class="field">
               <label for="f-age">Uzrast igrača <span>(opciono)</span></label>
               <input id="f-age" name="uzrast" type="text" inputmode="numeric" placeholder="od 6 do 15 godina">
-            </div>
-            <div class="field">
-              <label for="f-format">Format treninga</label>
-              <select id="f-format" name="format">
-                <option value="">Nisam siguran/na</option>
-                <option value="[PROGRAM 01]">[PROGRAM 01]</option>
-                <option value="[PROGRAM 02]">[PROGRAM 02]</option>
-                <option value="[PROGRAM 03]">[PROGRAM 03]</option>
-              </select>
             </div>
           </div>
           <div class="field">

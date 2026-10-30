@@ -40,6 +40,7 @@
 
   /* Reveal pri skrolovanju */
   function setupReveals() {
+    if (window.innerWidth < 900) document.querySelectorAll('.academy__grid > [data-reveal]').forEach(function (el) { el.removeAttribute('data-reveal'); });
     if (reduced || !('IntersectionObserver' in window)) return;
     var els = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
     els.forEach(function (el) {
@@ -118,6 +119,74 @@
     window.addEventListener('resize', function () { if (window.innerWidth >= 900 && menu.classList.contains('is-open')) setMenu(false); });
   }
 
+  /* Mobilni: mekani ulaz i izlaz iz zakačene sekcije */
+  function edgeEase(stage, r) {
+    if (!stage) return;
+    if (window.innerWidth >= 900) { if (stage.style.transform) stage.style.transform = ''; return; }
+    var vh = window.innerHeight;
+    var e = function (t) { return 1 - Math.pow(1 - t, 3); };
+    var en = e(clamp(1 - r.top / (vh * 0.9), 0, 1));
+    var ex = e(clamp((vh - r.bottom) / (vh * 0.9), 0, 1));
+    stage.style.transform = 'translate3d(0,' + ((1 - en) * 56 - ex * 24) + 'px,0) scale(' + (0.92 + 0.08 * en - 0.06 * ex) + ')';
+  }
+  function stackPos(sec, N, mobileMode) {
+    var r = sec.getBoundingClientRect();
+    var total = sec.offsetHeight - window.innerHeight;
+    var p = total > 0 ? clamp(-r.top / total, 0, 1) : 0;
+    var rawp = p * (N - 1);
+    var k = Math.min(Math.floor(rawp), N - 2);
+    var f = rawp - k;
+    var a = mobileMode ? (k === 0 ? 0 : 0.1) : 0.18, b = mobileMode ? (k === N - 2 ? 1 : 0.9) : 0.82;
+    var t = clamp((f - a) / (b - a), 0, 1);
+    return k + t * t * (3 - 2 * t);
+  }
+  function placeCards(cards, cur) {
+    for (var i = 0; i < cards.length; i++) {
+      var d = i - cur, t, o;
+      if (d > 0) { t = 'translate3d(0,' + (Math.min(d, 1.2) * 115) + '%,0)'; o = d >= 1.15 ? 0 : 1; }
+      else { var b = Math.max(d, -3); t = 'translate3d(0,' + (b * 22) + 'px,0) scale(' + (1 + b * 0.055) + ')'; o = clamp(1 + b * 0.32, 0, 1); }
+      cards[i].style.transform = t;
+      cards[i].style.opacity = o;
+    }
+  }
+
+  /* O akademiji: slaganje kartica pri skrolovanju, samo mobilni */
+  (function () {
+    var sec = document.getElementById('akademija');
+    if (!sec) return;
+    var cards = sec.querySelectorAll('.academy__grid > div');
+    var stage = sec.querySelector('.academy__grid');
+    var N = cards.length;
+    if (N < 2) return;
+    var pending = 0, cur = null, lastT = 0, wasMobile = null;
+    function frame(now) {
+      pending = 0;
+      var m = window.innerWidth < 900;
+      if (!m) {
+        if (wasMobile !== false) { for (var i = 0; i < N; i++) { cards[i].style.transform = ''; cards[i].style.opacity = ''; cards[i].style.zIndex = ''; } stage.style.transform = ''; }
+        wasMobile = false; cur = null; return;
+      }
+      if (wasMobile !== true) { for (var j = 0; j < N; j++) cards[j].style.zIndex = j + 1; cur = null; }
+      wasMobile = true;
+      var tgt = stackPos(sec, N, true);
+      var r = sec.getBoundingClientRect();
+      if (cur === null || reduced || r.bottom < 0 || r.top > window.innerHeight) cur = tgt;
+      else {
+        var dt = Math.min(64, lastT ? now - lastT : 16);
+        cur += (tgt - cur) * (1 - Math.exp(-dt / 110));
+        if (Math.abs(tgt - cur) < 0.0005) cur = tgt;
+      }
+      lastT = now;
+      edgeEase(stage, r);
+      placeCards(cards, cur);
+      if (cur !== tgt) pending = raf(frame); else lastT = 0;
+    }
+    var tick = function () { if (!pending) pending = raf(frame); };
+    window.addEventListener('scroll', tick, { passive: true });
+    window.addEventListener('resize', tick);
+    tick();
+  })();
+
   /* Coerver: kartice vođene skrolom, sa ublažavanjem za točkić miša */
   (function () {
     var sec = document.getElementById('coerver');
@@ -130,18 +199,9 @@
     var smooth = function (t) { return t * t * (3 - 2 * t); };
     var pending = 0, cur = null, lastT = 0, lastIdx = -1;
     cards.forEach(function (c, i) { c.style.zIndex = i + 1; });
-    function target() {
-      var r = sec.getBoundingClientRect();
-      var total = sec.offsetHeight - window.innerHeight;
-      var p = total > 0 ? clamp(-r.top / total, 0, 1) : 0;
-      var rawp = p * (N - 1);
-      var k = Math.min(Math.floor(rawp), N - 2);
-      var f = rawp - k;
-      return k + smooth(clamp((f - 0.18) / 0.64, 0, 1));
-    }
     function frame(now) {
       pending = 0;
-      var tgt = target();
+      var tgt = stackPos(sec, N, window.innerWidth < 900);
       var r0 = sec.getBoundingClientRect();
       var off = r0.bottom < 0 || r0.top > window.innerHeight;
       if (cur === null || off || reduced) cur = tgt;
@@ -151,6 +211,7 @@
         if (Math.abs(tgt - cur) < 0.0005) cur = tgt;
       }
       lastT = now;
+      edgeEase(sec.querySelector('.coerver__stage'), r0);
       for (var i = 0; i < N; i++) {
         var d = i - cur, t, o;
         if (d > 0) { t = 'translate3d(0,' + (Math.min(d, 1.2) * 115) + '%,0)'; o = d >= 1.15 ? 0 : 1; }
@@ -168,16 +229,6 @@
     window.addEventListener('resize', tick);
     tick();
   })();
-
-  /* "Pitaj za ovaj program" */
-  var formatSelect = document.getElementById('f-format');
-  document.querySelectorAll('[data-program]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      if (formatSelect) formatSelect.value = btn.getAttribute('data-program');
-      var target = document.getElementById('prijava');
-      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 76, behavior: reduced ? 'auto' : 'smooth' });
-    });
-  });
 
   /* Forma */
   var form = document.getElementById('trial-form');
