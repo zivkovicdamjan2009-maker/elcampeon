@@ -94,7 +94,7 @@
     var y = window.scrollY;
     var menuOpen = menu && menu.classList.contains('is-open');
     var pill = y > 8 && !menuOpen;
-    var showSticky = window.innerWidth < 900 && y > 560 && !menuOpen;
+    var showSticky = window.innerWidth < 900 && pill;
     var s = (pill ? 1 : 0) + '' + (showSticky ? 1 : 0);
     if (s === lastState) return;
     lastState = s;

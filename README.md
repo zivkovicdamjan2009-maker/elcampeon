@@ -15,12 +15,14 @@ assets/img/             OVDE idu fotografije
 ## Fotografije
 Ubacite slike u `assets/img/` sa tačno ovim imenima. Dok slika ne postoji, prikazuje se plavi placeholder.
 
-- hero.jpg (glavna, horizontalna)
+- hero.jpg (glavna, uspravna 4:5; na mobilnom se seče na 4:3)
 - o-nama.jpg (Kako je sve počelo)
 - probni-trening.jpg (Hajde, zajedno da probamo)
 - ocekivanja.jpg (Očekivanja na treningu)
-- trener.jpg (uspravna 4:5)
+- trener.jpg (uspravna 4:5, Dušan Sajdl)
 - galerija-1.jpg … galerija-5.jpg (galerija-1 je najveća)
+
+Trenutne slike su privremene, za pregled. Zamenite ih pravim fotografijama pod istim imenima.
 
 Preporuka: širina do 1600px, kompresovano (npr. squoosh.app).
 
