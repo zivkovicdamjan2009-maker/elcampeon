@@ -38,7 +38,7 @@ input,select,textarea,button{font:inherit}
 .float.is-paused{animation-play-state:paused}
 
 /* Preloader */
-.loader{position:fixed;inset:0;z-index:100;background:var(--rich-black);display:flex;align-items:center;justify-content:center;transition:transform .9s cubic-bezier(.76,0,.24,1),border-radius .9s cubic-bezier(.76,0,.24,1)}
+.loader{position:fixed;inset:0;z-index:100;will-change:transform;background:var(--rich-black);display:flex;align-items:center;justify-content:center;transition:transform .9s cubic-bezier(.76,0,.24,1),border-radius .9s cubic-bezier(.76,0,.24,1)}
 .loader__inner{display:flex;flex-direction:column;align-items:center;transition:opacity .4s ease,transform .6s var(--ease)}
 .loader__crest{position:relative;width:132px;height:154px}
 .loader__halo{position:absolute;inset:-60px;border-radius:50%;background:radial-gradient(closest-side,rgba(22,109,166,.45),rgba(6,52,103,.18) 55%,rgba(5,12,18,0) 100%);animation:ecHalo 1.4s var(--ease) both}
@@ -301,6 +301,8 @@ a.contact__item:hover{background:rgba(181,213,218,.16);color:var(--white)}
 .form .btn:hover{background:#7DCFE4}
 .form .btn:active{background:var(--green-blue);color:var(--white);transform:scale(.98)}
 .form__note{margin:0;font-size:13px;line-height:1.5;color:var(--ink-2)}
+.form__note a{color:var(--green-blue);font-weight:600;white-space:nowrap}
+.form__note a:hover{color:var(--midnight)}
 .sent{animation:ecFadeUp .6s var(--ease) both;background:var(--mist);color:var(--rich-black);padding:clamp(28px,4vw,44px);border-radius:28px}
 .sent__title{margin:0;font-family:var(--font-head);font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-.025em}
 .sent__text{margin:14px 0 0;font-size:17px;line-height:1.6;color:var(--ink-2)}
@@ -371,13 +373,4 @@ body.has-sticky .footer__bottom{padding-bottom:96px}
 @media (max-width:639px){
   .academy__grid{grid-template-columns:minmax(0,1fr)}
   .academy__grid > .rg:last-child{grid-column:span 1}
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .hero-in,.site-header{opacity:1!important;transform:none!important}
-  .hero__media{transform:none!important}
-  .js-reveal [data-reveal]{opacity:1!important;transform:none!important;clip-path:none!important}
 }

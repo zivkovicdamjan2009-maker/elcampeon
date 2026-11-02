@@ -3,7 +3,8 @@
   'use strict';
   var root = document.documentElement;
   var body = document.body;
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* Animacije rade uvek, nezavisno od sistemskog podešavanja "smanji animacije". */
+  var reduced = false;
   var raf = window.requestAnimationFrame.bind(window);
   var clamp = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
 
@@ -11,8 +12,9 @@
   /* Fotografije: dodajte fajl u assets/img/ pod imenom iz data-src i pojaviće se sama */
   document.querySelectorAll('.media img[data-src]').forEach(function (img) {
     var box = img.closest('.media');
+    img.decoding = 'async';
     img.addEventListener('load', function () { box.classList.add('has-img'); });
-    img.addEventListener('error', function () { img.remove(); });
+    img.addEventListener('error', function () { box.classList.remove('has-img'); img.remove(); });
     img.src = img.getAttribute('data-src');
   });
 
@@ -36,6 +38,7 @@
     var fonts = document.fonts ? document.fonts.ready : Promise.resolve();
     var cap = new Promise(function (r) { setTimeout(r, 3200); });
     Promise.race([Promise.all([minWait, fonts]), cap]).then(exitLoader);
+    document.addEventListener('visibilitychange', function () { if (document.hidden) return; setTimeout(exitLoader, 600); });
   } else { exitLoader(); }
 
   /* Reveal pri skrolovanju */
