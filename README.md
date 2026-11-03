@@ -19,6 +19,7 @@ Ubacite slike u `assets/img/` sa tačno ovim imenima. Dok slika ne postoji, prik
 - o-nama.jpg (Kako je sve počelo)
 - probni-trening.jpg (Hajde, zajedno da probamo)
 - ocekivanja.jpg (Očekivanja na treningu)
+- roditelji.jpg (Roditelji su deo tima)
 - trener.jpg (uspravna 4:5, Dušan Sajdl)
 - galerija-1.jpg … galerija-5.jpg (galerija-1 je najveća)
 
